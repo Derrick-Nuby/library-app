@@ -21,12 +21,19 @@ body {
     background-color: var(--background);
 }
 
-* {
-    /* border: red 1px solid;    */
-}
 body.dark {
     color: white;
-    background-color: var(--bg);
+    --text: #e8f2f1;
+    --background: #091316;
+    --primary: #80dbd2;
+    --secondary: #010409;
+    --accent: #313a9b;
+    --vrdark: #c5c5d8;
+    --vrwhite: #F6F8FA;
+}
+
+* {
+    /* border: red 1px solid;    */
 }
 
 header {
@@ -55,6 +62,8 @@ a {
 
 .menu > ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 40px;
     list-style: none;
 }
@@ -70,7 +79,109 @@ a {
     background-color: var(--background);
 }
 
+li:nth-child(4) {
+    padding: 7px 14px;
+    border-radius: 20px;
+    background-color: var(--vrdark);
+    color: var(--background);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* floating */
+
+
+#addbook {
+    position: fixed;
+    bottom: 5%;
+    right: 20px;
+    background-color: var(--accent);
+    padding: 14px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
 /* main section */
+
+.booksec {
+    padding: 0px 70px;
+    margin-bottom: 70px;
+}
+
+.inside {
+    margin: 30px;
+}
+
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+.book {
+    /* display: flex;
+    flex-direction: column; */
+    background-color: var(--secondary);
+}
+
+.book > img {
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+    padding-top: 20px;
+}
+
+.title {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 26px;
+    color: var(--accent);
+    margin: 10px 0px;
+}
+
+.pages, .author {
+    margin-left: 20px;
+}
+
+.lower-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+    margin-top: 10px;
+}
+
+.btns {
+    width: 100%;
+    /* display: block; */
+    text-align: center;
+    padding: 5px 0px;
+    font-weight: bolder;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.read {
+    background-color: var(--accent);
+    
+
+}
+.delete {
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+/* footer section */
 
 .statistics {
     background-color: var(--secondary);
@@ -157,5 +268,12 @@ i {
 
 .menu {
     display: none;
+}
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    /* text-align: center; */
 }
 }
