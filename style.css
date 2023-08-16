@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
     --text: #010104;
@@ -8,7 +8,6 @@
     --accent: #313a9b;
     --vrdark: #010409;
     --vrwhite: #F6F8FA;
-    --bgwhite: #FEFEFE;
     --bg:#091316;
 }
 
@@ -19,10 +18,68 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     color: var(--text);
-    background-color: var(--bgwhite);
+    background-color: var(--background);
 }
 
+* {
+    /* border: red 1px solid; */
+}
 body.dark {
     color: white;
     background-color: var(--bg);
+}
+
+header {
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 70px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+
+.logo {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.menu > ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+
+.menu a {
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+.menu a:hover {
+    color: var(--accent);
+    font-weight: bold;
+    background-color: var(--background);
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+.logo {
+    font-size: 30px;
+} 
+
+.logo img {
+    height: 20px;
+}
+
+.menu {
+    display: none;
+}
 }
