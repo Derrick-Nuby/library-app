@@ -5,7 +5,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-
   this.info = function () {
     const readStatus = this.read ? "Read" : "Not read yet";
     return `<div class="book">
@@ -45,7 +44,24 @@ addBookToLibrary(
   320,
   true
 );
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
-addBookToLibrary("Think and Grow Rich", "Napoleon Hill", 320, false);
+// addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
+// addBookToLibrary("Think and Grow Rich", "Napoleon Hill", 320, false);
 
-displayBooks();
+function handleSubmit(event) {
+  event.preventDefault();
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const haveRead = document.getElementById("read").checked;
+
+  addBookToLibrary(title, author, pages, haveRead);
+  displayBooks();
+  form.reset();
+}
+
+const form = document.getElementById("bookForm");
+form.addEventListener("submit", handleSubmit);
+
+// Add event listener to the submit button (optional)
+const submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("click", handleSubmit);
