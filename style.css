@@ -174,10 +174,26 @@ li:nth-child(4) {
     background-color: red;
 }
 
+/* popup */
 
+#popform {
+    /* position: fixed; */
+    /* margin: 0 auto; */
+    background-color: #80dbd262;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Adjust the gap between stacked elements */
+}
 
-
-
+.sidebside {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Adjust the gap between side-by-side elements */
+}
 
 
 
@@ -253,6 +269,35 @@ footer a {
 
 i {
     font-size: 24px;
+}
+
+
+
+
+
+/* error */
+
+.error {
+    display: none;
+    background-color: red;
+    padding: 15px 10px;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px 0px 0px 10px;
+    position: fixed;
+    width: 40%;
+    right: 0;
+    top: 10%;
+    animation: slideInFromRight 1s forwards;
+}
+        
+@keyframes slideInFromRight {
+    0% {
+        right: -50%;
+    }
+    100% {
+        right: 0;
+    }
 }
 
 
