@@ -113,17 +113,16 @@ li:nth-child(4) {
     margin: 30px;
 }
 
-.books-container {
+#books-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     justify-content: center;
-    /* text-align: center; */
 }
 
 .book {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     background-color: var(--secondary);
 }
 
@@ -145,12 +144,15 @@ li:nth-child(4) {
 .pages, .author {
     margin-left: 20px;
 }
+.pages {
+    margin-bottom: 30px;
+}
 
 .lower-card {
     display: flex;
     justify-content: space-between;
     gap: 0px;
-    margin-top: 10px;
+    margin-top: auto;
 }
 
 .btns {
@@ -269,7 +271,7 @@ i {
 .menu {
     display: none;
 }
-.books-container {
+#books-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
