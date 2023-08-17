@@ -12,7 +12,13 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/9e43b5fe15.js" crossorigin="anonymous"></script>
 </head>
+<!-- <body class="dark"> -->
 <body>
+    <div class="error">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem minima unde non labore quo sapiente, quibusdam
+            tenetur similique obcaecati sint doloremque mollitia soluta molestiae et fuga voluptas. Odio, explicabo illo.
+        </p>
+    </div>
     <header>
             <a href="#" class="logo">
             <img src="./images/favicon/favicon-32x32.png" alt=""> <span>MyBookHarbor</span> <img src="./images/favicon/favicon-32x32.png" alt="">
@@ -27,6 +33,27 @@
         </div>
     </header>
 
+    <div id="popform">
+        <form action="" name="formBook" id="bookForm" method="GET">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="url">image URL</label>
+            <input type="text" id="url">
+            <label for="author">Author</label>
+            <input type="text" id="author">
+            <label for="pages">Pages</label>
+            <input type="number" id="pages">
+            <div class="sidebside">
+                <label for="read">Have you Read This BOOK?</label>
+                <input type="checkbox" name="have you" id="read">
+            </div>
+        
+            <button type="submit" id="submitButton">Send Form</button>
+        </form>
+
+    </div>
+
+    
     <main >
         <!-- <div id="dark"></div> -->
         <div id="addbook"><i class="fa-solid fa-plus"></i> Add Book</div>
