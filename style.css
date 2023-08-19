@@ -177,24 +177,64 @@ li:nth-child(4) {
 /* popup */
 
 #popform {
-    /* position: fixed; */
-    /* margin: 0 auto; */
-    background-color: #80dbd262;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: #80dbd2;
+    border-radius: 5px;
+    animation: slideInToCenter 2s forwards;
+}
+@keyframes slideInToCenter {
+    0% {
+        bottom: 50%;
+        right: 50%;
+    transform: translate(195%, 100%);
+    }
+    100% {
+        bottom: -50%;
+        right: -50%;
+    }
 }
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* Adjust the gap between stacked elements */
+    padding: 20px 20px;
+}
+
+.center {
+    text-align: center;
 }
 
 .sidebside {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Adjust the gap between side-by-side elements */
 }
 
+label {
+    font-size: 20px;
+    font-weight: 450;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+button {
+    font-size: 18px;
+    padding: 7px 14px;
+    cursor: pointer;
+    background-color: var(--accent);
+    border: none;
+    font-weight: bold;
+    border-radius: 2px;
+}
 
 
 
