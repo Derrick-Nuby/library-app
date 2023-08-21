@@ -197,6 +197,10 @@ li:nth-child(4) {
         right: -50%;
     }
 }
+
+.remove {
+    display: none;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -204,6 +208,9 @@ form {
     padding: 20px 20px;
 }
 
+h2 {
+    font-size: 44px;
+}
 .center {
     text-align: center;
 }
@@ -215,7 +222,7 @@ form {
 }
 
 label {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 450;
 }
 
@@ -234,6 +241,10 @@ button {
     border: none;
     font-weight: bold;
     border-radius: 2px;
+}
+
+#closeWindow {
+    background-color: red;
 }
 
 
