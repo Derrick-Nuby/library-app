@@ -2,6 +2,8 @@ const myLibrary = [];
 const addbookbtn = document.getElementById("addbook");
 const popform = document.getElementById("popform");
 const closeWindow = document.getElementById("closeWindow");
+const deleteBtns = document.querySelectorAll(".delete");
+const books = document.querySelectorAll(".book");
 
 addbookbtn.addEventListener("click", function () {
   popform.classList.remove("remove");
@@ -14,16 +16,39 @@ function closePopUp(event) {
   popform.classList.add("remove");
 }
 
-function Book(title, author, pages, read) {
+deleteBtns.forEach(function (deleteBtn) {
+  deleteBtn.addEventListener("click", function () {
+    // myLibrary.pop(deleteBtn);
+    // deleteBtn.remove(deleteBtn);
+    // alert(deleteBtn);
+    for (let i = 0; i < books.length; i++) {
+      const book = books[i];
+      book.addEventListener("click", function () {
+        // alert("deleted");
+        // myLibrary.pop(books[i]);
+        // book.remove();
+      });
+    }
+  });
+});
+function Book(title, url, author, pages, read) {
   this.title = title;
+  this.url = url;
   this.author = author;
   this.pages = pages;
   this.read = read;
   this.info = function () {
     const readStatus = this.read ? "Read" : "Not read yet";
+    let theUrl;
+
+    if (this.url === "") {
+      theUrl = "./images/notfound.png";
+    } else {
+      theUrl = this.url;
+    }
     return `<div class="book">
                     <div class="rdchk"></div>
-                    <img src="./images/notfound.png" alt="">
+                    <img src="${theUrl}" alt="">
                     <div class="title">${this.title}</div>
                     <div class="author"><b>Author: </b>${this.author}</div>
                     <div class="pages"><b>Pages: </b>${this.pages} pages</div>
@@ -35,8 +60,8 @@ function Book(title, author, pages, read) {
   };
 }
 
-function addBookToLibrary(title, author, pages, read) {
-  const newBook = new Book(title, author, pages, read);
+function addBookToLibrary(title, url, author, pages, read) {
+  const newBook = new Book(title, url, author, pages, read);
   myLibrary.push(newBook);
 }
 
@@ -64,11 +89,12 @@ function displayBooks() {
 function handleSubmit(event) {
   event.preventDefault();
   const title = document.getElementById("title").value;
+  const url = document.getElementById("url").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
   const haveRead = document.getElementById("read").checked;
 
-  addBookToLibrary(title, author, pages, haveRead);
+  addBookToLibrary(title, url, author, pages, haveRead);
   displayBooks();
   form.reset();
   popform.classList.add("remove");
