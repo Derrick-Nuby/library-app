@@ -1,4 +1,18 @@
 const myLibrary = [];
+const addbookbtn = document.getElementById("addbook");
+const popform = document.getElementById("popform");
+const closeWindow = document.getElementById("closeWindow");
+
+addbookbtn.addEventListener("click", function () {
+  popform.classList.remove("remove");
+});
+
+closeWindow.addEventListener("click", closePopUp);
+
+function closePopUp(event) {
+  event.preventDefault();
+  popform.classList.add("remove");
+}
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -37,13 +51,13 @@ function displayBooks() {
 }
 
 // Example usage:
-addBookToLibrary(
-  "Harry Potter and the Sorcerer's Stone",
-  "J.K. Rowling Potter and the Sorcerer's Stone",
-  "J.K. Rowling",
-  320,
-  true
-);
+// addBookToLibrary(
+//   "Harry Potter and the Sorcerer's Stone",
+//   "J.K. Rowling Potter and the Sorcerer's Stone",
+//   "J.K. Rowling",
+//   320,
+//   true
+// );
 // addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
 // addBookToLibrary("Think and Grow Rich", "Napoleon Hill", 320, false);
 
@@ -57,6 +71,7 @@ function handleSubmit(event) {
   addBookToLibrary(title, author, pages, haveRead);
   displayBooks();
   form.reset();
+  popform.classList.add("remove");
 }
 
 const form = document.getElementById("bookForm");
